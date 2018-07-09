@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="">
+<html class="theme-next mist use-motion" lang="">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -56,10 +56,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-deadpool.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-deadpool.png?v=5.1.4">
 
 
   <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="SortingBubble Sort 冒泡排序通过相邻元素的比较和交换把小的数交换到最前面。先确定最后一位(最大值) Step:  比较相邻的元素。如果第一个比第二个大，就交换他们两个。 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。 针对所有的元素重复以上的步骤，除了最后一个。 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比">
+<meta name="description" content="这篇文章主要是回顾和巩固一下基础的排序算法">
 <meta name="keywords" content="Algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Basic Sorting">
-<meta property="og:url" content="http://yoursite.com/2018/05/02/Basic_Sorting/index.html">
+<meta property="og:url" content="https://zheyaoliu.me/2018/05/02/Basic_Sorting/index.html">
 <meta property="og:site_name" content="Damon&#39;s blog">
-<meta property="og:description" content="SortingBubble Sort 冒泡排序通过相邻元素的比较和交换把小的数交换到最前面。先确定最后一位(最大值) Step:  比较相邻的元素。如果第一个比第二个大，就交换他们两个。 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。 针对所有的元素重复以上的步骤，除了最后一个。 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比">
+<meta property="og:description" content="这篇文章主要是回顾和巩固一下基础的排序算法">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-08T07:33:30.291Z">
+<meta property="og:updated_time" content="2018-07-09T02:21:23.858Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Basic Sorting">
-<meta name="twitter:description" content="SortingBubble Sort 冒泡排序通过相邻元素的比较和交换把小的数交换到最前面。先确定最后一位(最大值) Step:  比较相邻的元素。如果第一个比第二个大，就交换他们两个。 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。 针对所有的元素重复以上的步骤，除了最后一个。 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比">
+<meta name="twitter:description" content="这篇文章主要是回顾和巩固一下基础的排序算法">
 
 
 
@@ -98,7 +98,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/02/Basic_Sorting/"/>
+  <link rel="canonical" href="https://zheyaoliu.me/2018/05/02/Basic_Sorting/"/>
 
 
 
@@ -243,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/02/Basic_Sorting/">
+    <link itemprop="mainEntityOfPage" href="https://zheyaoliu.me/2018/05/02/Basic_Sorting/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Damonlzy">
@@ -310,7 +310,8 @@
       
 
       
-        <h2 id="Sorting"><a href="#Sorting" class="headerlink" title="Sorting"></a>Sorting</h2><h3 id="Bubble-Sort-冒泡排序"><a href="#Bubble-Sort-冒泡排序" class="headerlink" title="Bubble Sort 冒泡排序"></a>Bubble Sort 冒泡排序</h3><p>通过相邻元素的比较和交换把小的数交换到最前面。<br>先确定最后一位(最大值)</p>
+        <p>这篇文章主要是回顾和巩固一下基础的排序算法<br><a id="more"></a></p>
+<h3 id="Bubble-Sort-冒泡排序"><a href="#Bubble-Sort-冒泡排序" class="headerlink" title="Bubble Sort 冒泡排序"></a>Bubble Sort 冒泡排序</h3><p>通过相邻元素的比较和交换把小的数交换到最前面。<br>先确定最后一位(最大值)</p>
 <p>Step:</p>
 <ol>
 <li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
@@ -318,7 +319,6 @@
 <li>针对所有的元素重复以上的步骤，除了最后一个。</li>
 <li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</li>
 </ol>
-<a id="more"></a>
 <p>Analyze:</p>
 <ul>
 <li>Time complexity: O(n^2)</li>
@@ -504,7 +504,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sorting"><span class="nav-number">1.</span> <span class="nav-text">Sorting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bubble-Sort-冒泡排序"><span class="nav-number">1.1.</span> <span class="nav-text">Bubble Sort 冒泡排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Insertion-Sort-插入排序"><span class="nav-number">1.2.</span> <span class="nav-text">Insertion Sort 插入排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selection-Sort-选择排序"><span class="nav-number">1.3.</span> <span class="nav-text">Selection Sort 选择排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#References"><span class="nav-number">1.4.</span> <span class="nav-text">References:</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bubble-Sort-冒泡排序"><span class="nav-number">1.</span> <span class="nav-text">Bubble Sort 冒泡排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Insertion-Sort-插入排序"><span class="nav-number">2.</span> <span class="nav-text">Insertion Sort 插入排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selection-Sort-选择排序"><span class="nav-number">3.</span> <span class="nav-text">Selection Sort 选择排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#References"><span class="nav-number">4.</span> <span class="nav-text">References:</span></a></li></ol></div>
             
 
           </div>
@@ -534,15 +534,9 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 

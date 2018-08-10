@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="这篇文章主要是回顾和巩固一下基础的排序算法">
+<meta name="description" content="这篇文章主要是回顾基础的排序算法">
 <meta name="keywords" content="Algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Basic Sorting">
 <meta property="og:url" content="https://zheyaoliu.me/2018/05/02/Basic_Sorting/index.html">
 <meta property="og:site_name" content="Damon&#39;s blog">
-<meta property="og:description" content="这篇文章主要是回顾和巩固一下基础的排序算法">
+<meta property="og:description" content="这篇文章主要是回顾基础的排序算法">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-09T02:21:23.858Z">
+<meta property="og:updated_time" content="2018-07-15T13:20:20.505Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Basic Sorting">
-<meta name="twitter:description" content="这篇文章主要是回顾和巩固一下基础的排序算法">
+<meta name="twitter:description" content="这篇文章主要是回顾基础的排序算法">
 
 
 
@@ -310,9 +310,8 @@
       
 
       
-        <p>这篇文章主要是回顾和巩固一下基础的排序算法<br><a id="more"></a></p>
-<h3 id="Bubble-Sort-冒泡排序"><a href="#Bubble-Sort-冒泡排序" class="headerlink" title="Bubble Sort 冒泡排序"></a>Bubble Sort 冒泡排序</h3><p>通过相邻元素的比较和交换把小的数交换到最前面。<br>先确定最后一位(最大值)</p>
-<p>Step:</p>
+        <p>这篇文章主要是回顾基础的排序算法<br><a id="more"></a></p>
+<h3 id="Bubble-Sort-冒泡排序"><a href="#Bubble-Sort-冒泡排序" class="headerlink" title="Bubble Sort 冒泡排序"></a>Bubble Sort 冒泡排序</h3><p>通过相邻元素的比较和交换把小的数交换到最前面。<br>先确定最后一位(最大值)<br>Step:</p>
 <ol>
 <li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
 <li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。</li>
@@ -321,12 +320,12 @@
 </ol>
 <p>Analyze:</p>
 <ul>
-<li>Time complexity: O(n^2)</li>
+<li>Average Time complexity: O(n^2)</li>
+<li>Space complexity: O(n)</li>
 <li>Auxiliary Space: O(1)</li>
 <li>Stable: Yes</li>
 </ul>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubbleSort</span><span class="params">(arr)</span>:</span></span><br><span class="line">	n = len(arr)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">		</span><br><span class="line">		swapped = <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>,n-i<span class="number">-1</span>):</span><br><span class="line">			<span class="keyword">if</span> arr[j]&gt; arr[j+<span class="number">1</span>]:</span><br><span class="line">				arr[j], arr[j+<span class="number">1</span>] = arr[j+<span class="number">1</span>], arr[j]</span><br><span class="line">				swapped = <span class="keyword">True</span></span><br><span class="line">		<span class="comment"># if no swap, list is ordered</span></span><br><span class="line">		<span class="keyword">if</span> swapped==<span class="keyword">False</span>:</span><br><span class="line">			<span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-<p><a href="https://www.geeksforgeeks.org/bubble-sort/" target="_blank" rel="noopener">Bubble Sort - GeeksforGeeks</a>  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubbleSort</span><span class="params">(arr)</span>:</span></span><br><span class="line">	n = len(arr)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">		</span><br><span class="line">		swapped = <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>,n-i<span class="number">-1</span>):</span><br><span class="line">			<span class="keyword">if</span> arr[j]&gt; arr[j+<span class="number">1</span>]:</span><br><span class="line">				arr[j], arr[j+<span class="number">1</span>] = arr[j+<span class="number">1</span>], arr[j]</span><br><span class="line">				swapped = <span class="keyword">True</span></span><br><span class="line">		<span class="comment"># if no swap, list is ordered</span></span><br><span class="line">		<span class="keyword">if</span> swapped==<span class="keyword">False</span>:</span><br><span class="line">			<span class="keyword">break</span></span><br></pre></td></tr></table></figure>
 <h3 id="Insertion-Sort-插入排序"><a href="#Insertion-Sort-插入排序" class="headerlink" title="Insertion Sort 插入排序"></a>Insertion Sort 插入排序</h3><p>像扑克摸牌一样，把新的值插入有序的list中</p>
 <p>Step:</p>
 <ol>
@@ -339,22 +338,51 @@
 </ol>
 <p>Analyze:</p>
 <ul>
-<li>Time complexity: O(n^2)</li>
+<li>Average Time complexity: O(n^2)</li>
+<li>Space complexity: O(n)</li>
 <li>Auxiliary Space: O(1)</li>
 <li>Stable: Yes</li>
-<li>Can be improved by binary insertion sort<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insertionSort</span><span class="params">(arr)</span>:</span></span><br><span class="line">	n = len(arr)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line"></span><br><span class="line">		key = arr[i]</span><br><span class="line"></span><br><span class="line">		j = i - <span class="number">1</span></span><br><span class="line">		<span class="keyword">while</span> arr[j] &gt; key <span class="keyword">and</span> j&gt;=<span class="number">0</span>:</span><br><span class="line">			arr[j+<span class="number">1</span>] = arr[j]</span><br><span class="line">			j -= <span class="number">1</span></span><br><span class="line">		arr[j+<span class="number">1</span>] = key</span><br></pre></td></tr></table></figure>
+<li>Can be improved by binary insertion sort<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insertionSort</span><span class="params">(arr)</span>:</span></span><br><span class="line">	n = len(arr)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line"></span><br><span class="line">		key = arr[i]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># find correct position in sorted array</span></span><br><span class="line">		j = i - <span class="number">1</span></span><br><span class="line">		<span class="keyword">while</span> arr[j] &gt; key <span class="keyword">and</span> j&gt;=<span class="number">0</span>:</span><br><span class="line">			arr[j+<span class="number">1</span>] = arr[j]</span><br><span class="line">			j -= <span class="number">1</span></span><br><span class="line">		arr[j+<span class="number">1</span>] = key</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><a href="https://www.geeksforgeeks.org/insertion-sort/" target="_blank" rel="noopener">Insertion Sort - GeeksforGeeks</a></p>
 <h3 id="Selection-Sort-选择排序"><a href="#Selection-Sort-选择排序" class="headerlink" title="Selection Sort 选择排序"></a>Selection Sort 选择排序</h3><p>在无序的list中重复寻找最小值，并将其放到前面</p>
 <p>Analyze:</p>
 <ul>
-<li>Time complexity: O(n^2)</li>
+<li>Average Time complexity: O(n^2)</li>
+<li>Space complexity: O(n)</li>
 <li>Auxiliary Space: O(1)</li>
-<li>Stable: Default implementation is not stable<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">selectionSort</span><span class="params">(arr)</span>:</span></span><br><span class="line">	n = len(arr)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">		<span class="comment"># minimum number index</span></span><br><span class="line">		min_idx = i</span><br><span class="line">		</span><br><span class="line">		<span class="comment"># find minimum number index in unsorted list</span></span><br><span class="line">		<span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>,n):</span><br><span class="line">			<span class="keyword">if</span> arr[min_idx] &gt; arr[j]:</span><br><span class="line">				min_idx = j</span><br><span class="line"></span><br><span class="line">		<span class="comment">#swap</span></span><br><span class="line">		arr[i], arr[min_idx] = arr[min_idx], arr[i]</span><br><span class="line">		<span class="comment"># list from index 0 to i is sorted</span></span><br></pre></td></tr></table></figure>
+<li>Stable: Default implementation is not stable<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">selectionSort</span><span class="params">(arr)</span>:</span></span><br><span class="line">	n = len(arr)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">		<span class="comment"># minimum number index</span></span><br><span class="line">		min_idx = i</span><br><span class="line">		</span><br><span class="line">		<span class="comment"># find minimum number index in unsorted list</span></span><br><span class="line">		<span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>,n):</span><br><span class="line">			<span class="keyword">if</span> arr[min_idx] &gt; arr[j]:</span><br><span class="line">				min_idx = j</span><br><span class="line"></span><br><span class="line">		<span class="comment">#swap</span></span><br><span class="line">		arr[i], arr[min_idx] = arr[min_idx], arr[i]</span><br><span class="line">		<span class="comment"># list from index 0 to i is sorted</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="References"><a href="#References" class="headerlink" title="References:"></a>References:</h3><p><a href="https://zhuanlan.zhihu.com/p/25074334" target="_blank" rel="noopener">八大排序算法python实现合辑</a><br><a href="https://www.geeksforgeeks.org/" target="_blank" rel="noopener">GeeksforGeeks | A computer science portal for geeks</a></p>
+<h3 id="Merge-Sort-归并排序"><a href="#Merge-Sort-归并排序" class="headerlink" title="Merge Sort 归并排序"></a>Merge Sort 归并排序</h3><p>分治法(Divide and Conquer)的典型例子, 主要实现合并两个有序数列</p>
+<p>Analyze:</p>
+<ul>
+<li>Average Time complexity: recursive algorithm and time complexity can be expressed as: $$T(n) = 2T(n/2) + \theta(n)$$<br>Can be solved in O(nlogn)</li>
+<li>Space complexity: O(n)</li>
+<li>Auxiliary space: O(n), O(1) with linked lists</li>
+<li>Stable: Yes<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mergeSort</span><span class="params">(arr)</span>:</span></span><br><span class="line">    print(<span class="string">"Splitting"</span>, arr)</span><br><span class="line">    n = len(arr)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># base case</span></span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> arr</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    mid = n // <span class="number">2</span></span><br><span class="line">    leftlist = arr[:mid]</span><br><span class="line">    rightlist = arr[mid:]</span><br><span class="line"></span><br><span class="line">    mergeSort(leftlist)</span><br><span class="line">    mergeSort(rightlist)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"Merging"</span>, arr)</span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    k = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># both left hand and right hand side not empty</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; len(leftlist) <span class="keyword">and</span> j &lt; len(rightlist):</span><br><span class="line">        <span class="keyword">if</span> leftlist[i] &lt; rightlist[j]:</span><br><span class="line">            arr[k] = leftlist[i]</span><br><span class="line">            i = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            arr[k] = rightlist[j]</span><br><span class="line">            j = j + <span class="number">1</span></span><br><span class="line">        k = k + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># right hand side is empty</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; len(leftlist):</span><br><span class="line">        arr[k] = leftlist[i]</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">        k = k + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># left hand side is empty</span></span><br><span class="line">    <span class="keyword">while</span> j &lt; len(rightlist):</span><br><span class="line">        arr[k] = rightlist[j]</span><br><span class="line">        j = j + <span class="number">1</span></span><br><span class="line">        k = k + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Quick-Sort-快速排序"><a href="#Quick-Sort-快速排序" class="headerlink" title="Quick Sort 快速排序"></a>Quick Sort 快速排序</h3><p>同样用分治法。</p>
+<p>Steps:</p>
+<ol>
+<li>选择一个基准值,可以选择list中第一位或最后一位作为基准,也可以随机</li>
+<li>进行分区(partition), 把小于基准值的放到左边,大的放到右边<ol>
+<li>LeftMark 从左往右寻找大于pivot的值, RightMark从右往左寻找pivot的值</li>
+<li>如果LeftMark&lt; RightMark,交换位置, 否则代表已经交换结束</li>
+<li>最后将pivot交换到RightMark的位置</li>
+</ol>
+</li>
+<li>对两个分区进行递归</li>
+</ol>
+<p>Analyze:</p>
+<ul>
+<li>Average Time complexity: O(nlogn)</li>
+<li>In-place Space complexity: O(logn)</li>
+<li>Stable: In-place sort is not stable</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quickSort</span><span class="params">(arr)</span>:</span></span><br><span class="line">    quickSortHelper(arr, <span class="number">0</span>, len(arr)<span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quickSortHelper</span><span class="params">(arr, left, right)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> left &lt; right:</span><br><span class="line">        <span class="comment"># find partition position</span></span><br><span class="line">        splitPoint = partition(arr, left, right)</span><br><span class="line"></span><br><span class="line">        quickSortHelper(arr, left, splitPoint<span class="number">-1</span>)</span><br><span class="line">        quickSortHelper(arr, splitPoint+<span class="number">1</span>, right)</span><br><span class="line"></span><br><span class="line"><span class="comment"># In-place partition</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">partition</span><span class="params">(arr, first, last)</span>:</span></span><br><span class="line">    pivot = arr[first]</span><br><span class="line">    leftMark = first+<span class="number">1</span></span><br><span class="line">    rightMark = last</span><br><span class="line"></span><br><span class="line">    done = <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">not</span> done:</span><br><span class="line">        <span class="comment"># find first value from left to right &gt; pivot</span></span><br><span class="line">        <span class="keyword">while</span> arr[leftMark] &lt;= pivot <span class="keyword">and</span> rightMark &gt;= leftMark:</span><br><span class="line">            leftMark = leftMark + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># find first value from right to left &lt; pivot</span></span><br><span class="line">        <span class="keyword">while</span> arr[rightMark] &gt;= pivot <span class="keyword">and</span> rightMark &gt;= leftMark:</span><br><span class="line">            rightMark = rightMark <span class="number">-1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> leftMark &lt; rightMark:</span><br><span class="line"></span><br><span class="line">            <span class="comment"># swap</span></span><br><span class="line">            arr[leftMark], arr[rightMark] = arr[rightMark], arr[leftMark]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line"></span><br><span class="line">            arr[first], arr[rightMark] = arr[rightMark], arr[first]</span><br><span class="line">            done = <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> rightMark</span><br></pre></td></tr></table></figure>
+<h3 id="References"><a href="#References" class="headerlink" title="References:"></a>References:</h3><p><a href="https://zhuanlan.zhihu.com/p/25074334" target="_blank" rel="noopener">八大排序算法python实现合辑</a><br><a href="https://www.geeksforgeeks.org/" target="_blank" rel="noopener">GeeksforGeeks | A computer science portal for geeks</a><br><a href="http://interactivepython.org/UhZmZ/courselib/static/pythonds/index.html" target="_blank" rel="noopener">Problem Solving with Algorithms and Data Structures using Python</a></p>
 
       
     </div>
@@ -381,6 +409,22 @@
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/10/Tree-Traversal/" rel="prev" title="Tree Traversal">
+                Tree Traversal <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -458,7 +502,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -471,7 +515,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -504,7 +548,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bubble-Sort-冒泡排序"><span class="nav-number">1.</span> <span class="nav-text">Bubble Sort 冒泡排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Insertion-Sort-插入排序"><span class="nav-number">2.</span> <span class="nav-text">Insertion Sort 插入排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selection-Sort-选择排序"><span class="nav-number">3.</span> <span class="nav-text">Selection Sort 选择排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#References"><span class="nav-number">4.</span> <span class="nav-text">References:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bubble-Sort-冒泡排序"><span class="nav-number">1.</span> <span class="nav-text">Bubble Sort 冒泡排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Insertion-Sort-插入排序"><span class="nav-number">2.</span> <span class="nav-text">Insertion Sort 插入排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selection-Sort-选择排序"><span class="nav-number">3.</span> <span class="nav-text">Selection Sort 选择排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Merge-Sort-归并排序"><span class="nav-number">4.</span> <span class="nav-text">Merge Sort 归并排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quick-Sort-快速排序"><span class="nav-number">5.</span> <span class="nav-text">Quick Sort 快速排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#References"><span class="nav-number">6.</span> <span class="nav-text">References:</span></a></li></ol></div>
             
 
           </div>
@@ -698,6 +742,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Damon&#39;s blog">
 <meta property="og:description" content="二叉树前中后序遍历">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-11T00:52:37.035Z">
+<meta property="og:updated_time" content="2018-08-11T01:09:41.387Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tree Traversal">
 <meta name="twitter:description" content="二叉树前中后序遍历">
@@ -313,9 +313,9 @@
         <h1 id="二叉树前中后序遍历"><a href="#二叉树前中后序遍历" class="headerlink" title="二叉树前中后序遍历"></a>二叉树前中后序遍历</h1><a id="more"></a>
 <p>三种遍历都属于DFS</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">        1</span><br><span class="line">      /   \</span><br><span class="line">    2      3</span><br><span class="line">  /  \</span><br><span class="line">4     5</span><br></pre></td></tr></table></figure>
-<p>先序遍历顺序: root, left child, right child<br>Preorder: 1-&gt;2-&gt;4-&gt;5-&gt;3</p>
-<p>中序遍历顺序: left child, root, right child<br>Inorder: 4-&gt;2-&gt;5-&gt;1-&gt;3</p>
-<p>后序遍历顺序: left child, right child, root<br>Postorder: 4-&gt;5-&gt;2-&gt;3-&gt;1</p>
+<p>先序遍历顺序: root -&gt; left -&gt; right<br>Preorder: 1-&gt;2-&gt;4-&gt;5-&gt;3</p>
+<p>中序遍历顺序: left -&gt; root -&gt; right<br>Inorder: 4-&gt;2-&gt;5-&gt;1-&gt;3</p>
+<p>后序遍历顺序: left -&gt; right -&gt; root<br>Postorder: 4-&gt;5-&gt;2-&gt;3-&gt;1</p>
 <p>递归实现逻辑很简单，非递归实现则需要用到Stack</p>
 <p>BFS: 1-&gt;2-&gt;3-&gt;4-&gt;5<br>用Queue实现</p>
 <p>Node class</p>
@@ -394,8 +394,20 @@
 </li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">peek</span><span class="params">(stack)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(stack) &gt;<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> stack[<span class="number">-1</span>]</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">IterativePostOrderOneStack</span><span class="params">(root)</span>:</span></span><br><span class="line">    s = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        <span class="keyword">while</span> root:</span><br><span class="line">            <span class="keyword">if</span> root.right <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">                s.append(root.right)</span><br><span class="line">            s.append(root)</span><br><span class="line">            root = root.left</span><br><span class="line"></span><br><span class="line">        root = s.pop()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> root.right <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span> <span class="keyword">and</span> peek(s) == root.right:</span><br><span class="line">            s.pop()</span><br><span class="line">            s.append(root)</span><br><span class="line">            root = root.right</span><br><span class="line"></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(root.val)</span><br><span class="line">            root = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> len(s)&lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.geeksforgeeks.org/iterative-postorder-traversal-using-stack/" target="_blank" rel="noopener">https://www.geeksforgeeks.org/iterative-postorder-traversal-using-stack/</a></p>
-<p><a href="https://www.geeksforgeeks.org/iterative-postorder-traversal-using-stack/" target="_blank" rel="noopener">https://www.geeksforgeeks.org/iterative-postorder-traversal-using-stack/</a></p>
+<ol start="3">
+<li><p>还有一种方法就是修改前序遍历</p>
+<ul>
+<li>前序遍历是root -&gt; left -&gt; right, 后序是left -&gt; right -&gt; root. </li>
+<li>只需要将前序遍历改为 root -&gt; right -&gt; left，再反转就可以了</li>
+</ul>
+</li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><p><a href="https://www.geeksforgeeks.org/iterative-postorder-traversal-using-stack/" target="_blank" rel="noopener">https://www.geeksforgeeks.org/iterative-postorder-traversal-using-stack/</a></p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/iterative-postorder-traversal-using-stack/" target="_blank" rel="noopener">https://www.geeksforgeeks.org/iterative-postorder-traversal-using-stack/</a></p>
+</li>
+</ul>
 
       
     </div>
@@ -437,6 +449,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/11/OOP-in-Java/" rel="prev" title="OOP in Java">
+                OOP in Java <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -517,7 +533,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -583,7 +599,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
